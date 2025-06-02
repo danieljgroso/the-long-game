@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  <title>The Long Game</title>
+<title>Oogie Boogie</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Dancing+Script&display=swap');
 
@@ -68,39 +68,30 @@
     color: #b03060;
   }
 </style>
-
 </head>
 <body>
 
-  <h1>The Long Game 💖</h1>
+  <h1>Oogie Boogie 💖</h1>
   <div id="description">
-    A card game for couples. Select a relationship stage and a category — or choose "Mixed" to shuffle all prompts from that stage. Each card is a lighthearted or meaningful question meant to bring you closer.
+    A card game with a healthy mix of categories.
   </div>
 
-  <h3>Select a stage and category to begin:</h3>
-
-  <select id="stage">
-    <option value="honeymoon">💘 Honeymoon (0–6 Months)</option>
-    <option value="rhythm">💞 Finding Our Rhythm (6–12 Months)</option>
-  </select>
+  <h3>Select a category to begin:</h3>
 
   <select id="category">
-   <option value="mixed">💫 Mixed</option>
+    <option value="mixed">💫 Mixed</option>
     <option value="silly">🎉 Silly</option>
     <option value="sweet">🍯 Sweet</option>
     <option value="flirty">🔥 Flirty</option>
     <option value="deep">🌊 Deep</option>
-
   </select>
 
-  <div id="card">Choose a stage and category, then click the button to draw a card!</div>
+  <div id="card">Choose a category, then click the button to draw a card!</div>
   <button onclick="drawCard()">Draw a Card</button>
-  
-  </body>
-  <script>
-    const decks = {
-      honeymoon: {
-        silly: [
+
+<script>
+  const decks = {
+    silly: [
       "What would our villain origin story be — and who started it?",
       "If we were emojis, which ones would we be side-by-side in someone’s recents?",
       "What animated couple are we most like... even if it’s a little embarrassing?",
@@ -188,134 +179,38 @@
       "What’s one little thing I do that builds your trust?",
       "What’s something about our connection that feels grounding to you?"
     ]
+  };
 
-      },
-      rhythm: {
-        silly: [
-      "What’s a weird habit of mine you’ve quietly accepted as normal now?",
-      "If we were reality show roommates, what would the producers love to catch us doing?",
-      "What’s our most chaotic inside joke that no one else understands anymore?",
-      "Who’s more likely to start a household project… and abandon it halfway through?",
-      "What’s the most ‘us’ moment we’ve had that would make our future kids roll their eyes?",
-      "What’s our unofficial love language? (e.g., sharing fries, roasting each other, matching socks)",
-      "Who would forget we made dinner plans — and still be the first one hungry?",
-      "What’s the dumbest argument we’ve had that we now just laugh about?",
-      "What’s something one of us pretends to hate but secretly enjoys now because of the other?",
-      "If we had a signature dance move, what would it look like — bonus points if it's awkward.",
-      "Who’s more likely to adopt a plant and name it something dramatic?",
-      "What’s the most unnecessary couple routine we’ve created and stuck with?",
-      "What’s one item in our home that feels like a full-blown inside joke now?",
-      "What’s a dumb little ritual we should never stop doing?",
-      "Who’s more likely to say ‘let’s be productive today’ and then immediately nap?",
-      "What’s the most ‘elderly married couple’ thing we’ve done already?",
-      "If our lives were a comic strip, what would be the recurring punchline?",
-      "Who’s more likely to get irrationally upset when we lose at a board game?",
-      "What’s our go-to ‘we’re bored but together’ activity that never fails to be oddly fun?",
-      "If someone followed us around for a day, what moment would make them go: ‘Okay, these two are weird — but it works’?"
-    ],
-    sweet: [
-      "What’s a moment recently that made you stop and go, ‘I really like us’?",
-      "What do you miss most when we’re apart — even if it’s just for a day?",
-      "What’s something you’ve gotten more confident about since we started dating?",
-      "What version of us do you think our friends see — and are they right?",
-      "What’s one small thing I do that makes you feel cared for, every time?",
-      "What’s a memory that makes you think: ‘Wow, we’re really becoming something’?",
-      "What’s something soft about our dynamic you never want to lose?",
-      "When was the last time you felt unexpectedly close to me?",
-      "What do you think makes our relationship work on the hard days?",
-      "What’s a quiet gesture of mine that means more than I probably realize?",
-      "What’s something about being with me that feels surprisingly easy?",
-      "What’s a habit or phrase of mine that you’ve adopted without noticing?",
-      "What’s something you were worried about at first… but now just feels normal?",
-      "What’s a moment you replay in your head when you need comfort?",
-      "What’s a small ‘win’ we’ve had as a couple that you’re proud of?",
-      "When do you feel the most like a team with me?",
-      "What’s something you want to learn with me — not just on your own?",
-      "What’s a way we’ve grown as a couple that makes you feel proud?",
-      "What’s something I do that reminds you I’m really with you, not just next to you?",
-      "How do you think we've changed each other for the better?"
-    ],
-    flirty: [
-      "What’s something we’ve tried that made you think, ‘Yep, we’ve got chemistry’?",
-      "What’s a moment I unintentionally flirted — and you definitely noticed?",
-      "What’s your favorite type of physical affection that isn’t a kiss?",
-      "What’s an outfit you wish I wore more often… purely for you?",
-      "What’s your favorite way to get my attention when we’re out?",
-      "If we had to sneak away for 10 minutes at a party, where would we go?",
-      "What’s something subtle I do that really turns you on?",
-      "What’s a fantasy you think we could actually pull off?",
-      "What’s the look I give you that you always know the meaning of?",
-      "What’s your personal favorite kiss we’ve ever had — and why?",
-      "What’s a scene from a movie/show that reminds you of us — in a spicy way?",
-      "If I whispered something flirty right now, what would you hope I said?",
-      "What’s a nickname I should call you when I’m trying to get my way?",
-      "What’s the most underrated romantic move — and when should I use it on you?",
-      "What’s your favorite kind of ‘accidental’ touch?",
-      "What’s your ideal slow-burn date night that ends in something… extra?",
-      "What would our ‘most likely to flirt through eye contact’ moment be?",
-      "What’s something you’d love for us to try, just once?",
-      "If I dared you to seduce me in 3 words, what would you say?",
-      "What kind of kiss totally ruins your focus?"
-    ],
-    deep: [
-      "What have you learned about how you love — since being with me?",
-      "What’s something you’re still healing from, even if it doesn’t show?",
-      "What do you need when you’re feeling off — but don’t know how to say it?",
-      "How has this relationship challenged the way you see yourself?",
-      "What’s a way you’ve felt more secure since we started dating?",
-      "What’s a part of our communication that still needs practice?",
-      "What emotional need are you learning to name better?",
-      "How do you handle being overwhelmed — and how can I meet you there?",
-      "What are your fears about building a future with someone?",
-      "What belief about love are you currently rewriting?",
-      "How do you know someone really gets you — and do you feel that here?",
-      "What’s something I’ve done that helped you feel emotionally safe?",
-      "What’s a part of your identity you’re still unfolding — and want me to understand?",
-      "What’s something from your childhood that shaped the way you connect now?",
-      "When do you feel closest to me, even in silence?",
-      "What do you hope our relationship helps both of us unlearn?",
-      "What’s a pattern you’re afraid of repeating — but trying not to?",
-      "What are the little ways you try to protect ‘us’ even when things are tough?",
-      "What version of love are you still discovering?",
-      "What does commitment look like to you now — compared to before we met?"
-    ]
-      }
-    };
+  let currentDeck = [];
+  let originalDeck = [];
 
-    let currentDeck = [];
-    let originalDeck = [];
+  function resetDeck() {
+    const category = document.getElementById("category").value;
+    if (category === "mixed") {
+      originalDeck = Object.values(decks).flat();
+    } else {
+      originalDeck = [...(decks[category] || [])];
+    }
+    currentDeck = [...originalDeck];
+    document.getElementById("card").innerText = "Deck ready 💫 Click the button to draw!";
+  }
 
-    function resetDeck() {
-      const stage = document.getElementById("stage").value;
-      const category = document.getElementById("category").value;
-
-      if (category === "mixed") {
-        originalDeck = Object.values(decks[stage]).flat();
-      } else {
-        originalDeck = [...(decks[stage]?.[category] || [])];
-      }
-
+  function drawCard() {
+    if (currentDeck.length === 0) {
+      document.getElementById("card").innerText = "Deck empty. Reshuffling...";
       currentDeck = [...originalDeck];
-      document.getElementById("card").innerText = "Deck ready 💫 Click the button to draw!";
+      return;
     }
+    const index = Math.floor(Math.random() * currentDeck.length);
+    const card = currentDeck.splice(index, 1)[0];
+    document.getElementById("card").innerText = card;
+  }
 
-    function drawCard() {
-      if (currentDeck.length === 0) {
-        document.getElementById("card").innerText = "Deck empty. Reshuffling...";
-        currentDeck = [...originalDeck];
-        return;
-      }
+  document.addEventListener("DOMContentLoaded", () => {
+    resetDeck();
+    document.getElementById("category").addEventListener("change", resetDeck);
+  });
+</script>
 
-      const index = Math.floor(Math.random() * currentDeck.length);
-      const card = currentDeck.splice(index, 1)[0];
-      document.getElementById("card").innerText = card;
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      resetDeck();
-      document.getElementById("stage").addEventListener("change", resetDeck);
-      document.getElementById("category").addEventListener("change", resetDeck);
-    });
-  </script>
-
+</body>
 </html>
